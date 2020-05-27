@@ -478,7 +478,7 @@ double probability::faulhaber(int n, int p)
 	try {
 		if (n > 0 && n < 169 && p > 0 && p < 41) {
 			if (p == 1) {
-				return (0.5 * n * (n + 1.0)); 
+				return ( 0.5 * n * ( n + 1.0 ) ); 
 			}
 			else if (p == 2) {
 				return ( ( ( 2.0* n + 1.0 ) * ( n + 1.0) * n ) / 6.0 ); 
@@ -490,6 +490,7 @@ double probability::faulhaber(int n, int p)
 				double t2 = std::pow(n, p) * 0.5; // n^{p} / 2
 				double tj = 0.0, sum = 0.0; 
 				
+				// compute the sum over even values of j, since Bj = 0 for all odd j
 				for (int j = 2; j <= p; j += 2) {
 					tj = bico(pp, j);
 					tj *= berno(j);
