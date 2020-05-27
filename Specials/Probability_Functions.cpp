@@ -488,7 +488,6 @@ double probability::faulhaber(int n, int p)
 				// sum of first n cubes
 				// Use Nichomachus's Theorem
 				// https://en.wikipedia.org/wiki/Squared_triangular_number
-				//return template_funcs::DSQR(0.5 * n * (n + 1.0));
 				return template_funcs::DSQR( faulhaber(n, 1) );
 			}
 			else if (p > 3) {
@@ -501,9 +500,9 @@ double probability::faulhaber(int n, int p)
 				
 				// compute the sum over even values of j, since Bj = 0 for all odd j
 				for (int j = 2; j <= p; j += 2) {
-					tj = bico(pp, j);
-					tj *= berno(j);
-					tj *= pow(n, pp - j);
+					tj = bico(pp, j); // binomial coefficient
+					tj *= berno(j); // Bernoulli number
+					tj *= pow(n, pp - j); // n^{p+1-j}
 					sum += tj; 
 				}
 				sum *= pp_inv; 
