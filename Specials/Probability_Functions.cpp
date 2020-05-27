@@ -478,12 +478,22 @@ double probability::faulhaber(int n, int p)
 	try {
 		if (n > 0 && n < 169 && p > 0 && p < 41) {
 			if (p == 1) {
+				// sum of first n integers
 				return ( 0.5 * n * ( n + 1.0 ) ); 
 			}
 			else if (p == 2) {
+				// sum of first n squares
 				return ( ( ( 2.0* n + 1.0 ) * ( n + 1.0) * n ) / 6.0 ); 
 			}
-			else if (p > 2) {
+			else if (p == 3) {
+				// sum of first n cubes
+				// Use Nichomachus's Theorem
+				// https://en.wikipedia.org/wiki/Squared_triangular_number
+				//return template_funcs::DSQR(0.5 * n * (n + 1.0));
+				return template_funcs::DSQR( faulhaber(n, 1) );
+			}
+			else if (p > 3) {
+				// use Faulhaber formula to compute sums of integers for exponents >= 4
 				int pp = p + 1; 
 				double pp_inv = 1.0 / pp; 
 				double t1 = std::pow(n, pp) * pp_inv; // n^{p+1}/(p+1)
