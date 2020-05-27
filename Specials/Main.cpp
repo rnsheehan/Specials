@@ -107,6 +107,12 @@ void Gamm_Test()
 		std::cout << "Berno(" << i << ") = " << probability::berno(i) << "\n"; 
 	}
 
+	// "With the help of this table, it took me less than half of a quarter of an hour
+	// to find that the tenth power of the first 1000 numbers being added together will
+	// yield the sum  91,409,924,241,424,243,424,241,924,242,500"
+	// Jacob Bernoulli, Summae Potestatum, 1713
+	// Today we can do a little better
+
 	std::cout << "\n"; 
 	std::cout << "S_{1}(50) = " << probability::faulhaber(50, 1) << "\n"; 
 	std::cout << "S_{2}(50) = " << probability::faulhaber(50, 2) << "\n"; 
@@ -114,10 +120,20 @@ void Gamm_Test()
 	std::cout << "S_{4}(50) = " << probability::faulhaber(50, 4) << "\n"; 
 	std::cout << "S_{5}(50) = " << probability::faulhaber(50, 5) << "\n"; 
 	std::cout << "\n"; 
-	std::cout << "S_{1}(31) = " << probability::faulhaber(31, 1) << "\n"; 
-	std::cout << "S_{2}(31) = " << probability::faulhaber(31, 2) << "\n"; 
-	std::cout << "S_{3}(31) = " << probability::faulhaber(31, 3) << "\n"; 
-	std::cout << "S_{4}(31) = " << probability::faulhaber(31, 4) << "\n"; 
-	std::cout << "S_{5}(31) = " << probability::faulhaber(31, 5) << "\n"; 
-
+	std::cout << "S_{1}(310) = " << probability::faulhaber(310, 1) << "\n"; 
+	std::cout << "S_{2}(310) = " << probability::faulhaber(310, 2) << "\n"; 
+	std::cout << "S_{3}(310) = " << probability::faulhaber(310, 3) << "\n"; 
+	std::cout << "S_{4}(310) = " << probability::faulhaber(310, 4) << "\n"; 
+	std::cout << "S_{5}(310) = " << probability::faulhaber(310, 5) << "\n"; 
+	std::cout << "\n";
+	std::cout << "S_{1}(1000) = " << probability::faulhaber(1000, 1) << "\n";
+	std::cout << "S_{2}(1000) = " << probability::faulhaber(1000, 2) << "\n";
+	std::cout << "S_{3}(1000) = " << probability::faulhaber(1000, 3) << "\n";
+	std::cout << "S_{4}(1000) = " << probability::faulhaber(1000, 4) << "\n";
+	std::cout << "S_{5}(1000) = " << probability::faulhaber(1000, 5) << "\n";
+	std::cout << "\n";
+	std::cout << "S_{10}(1000) = " << probability::faulhaber(1000, 10) << "\n";
+	std::cout << "S_{10}(10000) = " << probability::faulhaber(10000, 10) << "\n";
+	std::cout << "S_{10}(100000) = " << probability::faulhaber(100000, 10) << "\n";
+	std::cout << "S_{10}(1000000) = " << probability::faulhaber(1000000, 10) << "\n";
 }

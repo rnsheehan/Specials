@@ -1,7 +1,7 @@
 Program Exit Explanation
 
-Error occurred: Wed May 27 11:50:35 2020
+Error occurred: Wed May 27 14:45:00 2020
 
-Error: double probability::bico(int n, int k)
+Error: double probability::faulhaber(int n, int p)
 Bad input values
 

@@ -468,7 +468,6 @@ double probability::berno(int n)
 double probability::faulhaber(int n, int p)
 {
 	// Compute the sum of the first n integers where each integer is raised to exponent p
-	// number of integers is limited to <= 168
 	// exponent is limited to <= 40
 	// limits in place due to limits on computing of binomial coefficients and Bernoulli numbers
 	// sum is based on Faulhaber formula
@@ -476,7 +475,7 @@ double probability::faulhaber(int n, int p)
 	// R. Sheehan 27 - 5 - 2020
 
 	try {
-		if (n > 0 && n < 169 && p > 0 && p < 41) {
+		if (n > 0 && p > 0 && p < 41) {
 			if (p == 1) {
 				// sum of first n integers
 				return ( 0.5 * n * ( n + 1.0 ) ); 
