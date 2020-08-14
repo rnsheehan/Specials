@@ -8,9 +8,9 @@ void Gamm_Test();
 
 int main(int argc, char *argv[])
 {
-	Gamm_Test(); 
+	//Gamm_Test(); 
 
-	//Airy_Test(); 
+	Airy_Test(); 
 
 	std::cout<<"Press enter to close\n"; 
 	std::cin.get(); 
