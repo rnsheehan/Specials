@@ -31,9 +31,14 @@ static const double PI_4=(p); // pi / 4
 static const double PI_5=((4.0/5.0)*p); // pi / 5
 static const double PI_6=((2.0/3.0)*p); // pi / 6
 
+static const std::complex<double> zero(0.0, 0.0);
+static const std::complex<double> eye(0.0, 1.0);
+static const std::complex<double> one(1.0, 0.0);
+
 #include "Templates.h"
 #include "Useful.h"
 #include "Chebyshev_Approximation.h"
+#include "Faddeeva.hh"
 #include "Special_Functions.h"
 #include "Probability_Functions.h"
 

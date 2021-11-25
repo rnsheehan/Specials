@@ -5,12 +5,15 @@
 void Struve_Test(); 
 void Airy_Test(); 
 void Gamm_Test(); 
+void Voigt_Test(); 
 
 int main(int argc, char *argv[])
 {
 	//Gamm_Test(); 
 
-	Airy_Test(); 
+	//Airy_Test(); 
+
+	Voigt_Test(); 
 
 	std::cout<<"Press enter to close\n"; 
 	std::cin.get(); 
@@ -136,4 +139,124 @@ void Gamm_Test()
 	std::cout << "S_{10}(10000) = " << probability::faulhaber(10000, 10) << "\n";
 	std::cout << "S_{10}(100000) = " << probability::faulhaber(100000, 10) << "\n";
 	std::cout << "S_{10}(1000000) = " << probability::faulhaber(1000000, 10) << "\n";
+}
+
+void Voigt_Test()
+{
+	// Test the operation of the Voigt function
+	// R. Sheehan 25 - 11 - 2021
+
+	int nn; 
+	double xlo, xhi, dx, h, G, x0; 
+
+	std::string filename; 
+	std::ofstream write; 
+
+	h = 1; G = 1; x0 = 0; dx = 0.1;
+
+	filename = "Voigt_h_" + template_funcs::toString(h) + "_G_" + template_funcs::toString(G) + "_x0_" + template_funcs::toString(x0) + ".txt";
+
+	write.open(filename, std::ios_base::out, std::ios_base::trunc); 
+
+	if (write.is_open()) {
+
+		xlo = -5; xhi = 5.0; 
+		nn = 1 + static_cast<int>((xhi - xlo) / dx);
+		for (int i = 0; i < nn; i++) {
+			write <<std::setprecision(10) << xlo << "\t" << special::Voigt(xlo, h, G, x0) << "\n";
+			xlo += dx;
+		}
+
+		write.close(); 
+	}
+
+	h = 2; G = 1; x0 = 0;
+
+	filename = "Voigt_h_" + template_funcs::toString(h) + "_G_" + template_funcs::toString(G) + "_x0_" + template_funcs::toString(x0) + ".txt";
+
+	write.open(filename, std::ios_base::out, std::ios_base::trunc);
+
+	if (write.is_open()) {
+
+		xlo = -5; xhi = 5.0; 
+		nn = 1 + static_cast<int>((xhi - xlo) / dx);
+		for (int i = 0; i < nn; i++) {
+			write << std::setprecision(10) << xlo << "\t" << special::Voigt(xlo, h, G, x0) << "\n";
+			xlo += dx;
+		}
+
+		write.close();
+	}
+
+	h = 3; G = 1; x0 = 0;
+
+	filename = "Voigt_h_" + template_funcs::toString(h) + "_G_" + template_funcs::toString(G) + "_x0_" + template_funcs::toString(x0) + ".txt";
+
+	write.open(filename, std::ios_base::out, std::ios_base::trunc);
+
+	if (write.is_open()) {
+
+		xlo = -5; xhi = 5.0; 
+		nn = 1 + static_cast<int>((xhi - xlo) / dx);
+		for (int i = 0; i < nn; i++) {
+			write << std::setprecision(10) << xlo << "\t" << special::Voigt(xlo, h, G, x0) << "\n";
+			xlo += dx;
+		}
+
+		write.close();
+	}
+
+	h = 1; G = 2; x0 = 0;
+
+	filename = "Voigt_h_" + template_funcs::toString(h) + "_G_" + template_funcs::toString(G) + "_x0_" + template_funcs::toString(x0) + ".txt";
+
+	write.open(filename, std::ios_base::out, std::ios_base::trunc);
+
+	if (write.is_open()) {
+
+		xlo = -5; xhi = 5.0; 
+		nn = 1 + static_cast<int>((xhi - xlo) / dx);
+		for (int i = 0; i < nn; i++) {
+			write << std::setprecision(10) << xlo << "\t" << special::Voigt(xlo, h, G, x0) << "\n";
+			xlo += dx;
+		}
+
+		write.close();
+	}
+
+	h = 1; G = 3; x0 = 0;
+
+	filename = "Voigt_h_" + template_funcs::toString(h) + "_G_" + template_funcs::toString(G) + "_x0_" + template_funcs::toString(x0) + ".txt";
+
+	write.open(filename, std::ios_base::out, std::ios_base::trunc);
+
+	if (write.is_open()) {
+
+		xlo = -5; xhi = 5.0; 
+		nn = 1 + static_cast<int>((xhi - xlo) / dx);
+		for (int i = 0; i < nn; i++) {
+			write << std::setprecision(10) << xlo << "\t" << special::Voigt(xlo, h, G, x0) << "\n";
+			xlo += dx;
+		}
+
+		write.close();
+	}
+
+	h = 1; G = 1; x0 = 1;
+
+	filename = "Voigt_h_" + template_funcs::toString(h) + "_G_" + template_funcs::toString(G) + "_x0_" + template_funcs::toString(x0) + ".txt";
+
+	write.open(filename, std::ios_base::out, std::ios_base::trunc);
+
+	if (write.is_open()) {
+
+		xlo = -5; xhi = 5.0; 
+		nn = 1 + static_cast<int>((xhi - xlo) / dx);
+		for (int i = 0; i < nn; i++) {
+			write << std::setprecision(10) << xlo << "\t" << special::Voigt(xlo, h, G, x0) << "\n";
+			xlo += dx;
+		}
+
+		write.close();
+	}
 }

@@ -79,6 +79,8 @@ namespace special{
 	double Ell_E(double x, bool conjugate = false); // Elliptic integral of second kind defined by Hypergeometric Function
 
 	void Ell_K_E(double k, double &Kval, double &Eval, bool conjugate = false); // polynomial approximation to K(k) and E(k) and their conjugates
+
+	double Voigt(double x, double h, double G, double x0); // Voigt function, convolution of a Gaussian and a Lorentzian
 }
 
 #endif

@@ -1070,3 +1070,17 @@ void special::Ell_K_E(double k, double &Kval, double &Eval, bool conjugate)
 		exit(EXIT_FAILURE); 
 	}
 }
+
+double special::Voigt(double x, double h, double G, double x0)
+{
+	// This is an implementation of the Voigt function
+	// presumably x represents frequency
+	// x0 represents centre frequency
+	// h represents amplitude factor
+	// G represents HWHM
+
+	std::complex<double> z = ((x - x0 + 0.5*eye * G) * (2.0 * sqrt(log10(2.0)) / G));
+	std::complex<double> acb = 2.0 * sqrt(log10(2.0)) / (sqrt(PI) * G);
+	
+	return ( real(h * Faddeeva::w(z)) );
+}
