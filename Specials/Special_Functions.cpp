@@ -1079,6 +1079,13 @@ double special::Voigt(double x, double h, double G, double x0)
 	// h represents amplitude factor
 	// G represents HWHM
 
+	// There are problems with this implementation
+	// Technically Lorentz HWHM != Gauss HWHM so there should be another parameter
+	// Also the scale factor of 2.0 * sqrt(log10(2.0)) doesn't make any sense
+	// unless the idea was to have that factor be related to the real Gaussian HWHM 
+	// which is sqrt( 2 log(2) ) c
+	// R. Sheehan 30 - 11 - 2021
+
 	std::complex<double> z = ((x - x0 + 0.5*eye * G) * (2.0 * sqrt(log10(2.0)) / G));
 	std::complex<double> acb = 2.0 * sqrt(log10(2.0)) / (sqrt(PI) * G);
 	
